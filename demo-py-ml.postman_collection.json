@@ -39,6 +39,37 @@
 			"response": []
 		},
 		{
+			"name": "retraining",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": [\r\n        \"Stream thường hoạt động về đêm\",\r\n        \"Gamming thường là giải trí\"\r\n    ],\r\n    \"label\": [\r\n        \"MMO\",\r\n        \"MMO\"\r\n    ],\r\n    \"source\": [\r\n        \"Website\",\r\n        \"Website\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/retraining",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"retraining"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "predic",
 			"request": {
 				"method": "POST",
@@ -64,6 +95,62 @@
 					"port": "5000",
 					"path": [
 						"predic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "download",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/train/download",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"train",
+						"download"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/train/upload",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"train",
+						"upload"
 					]
 				}
 			},

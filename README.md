@@ -93,3 +93,13 @@ Request body
     ]
 }
 ```
+- Upload file .csv append data model
+```bash
+POST curl --location 'http://127.0.0.1:5000/train/upload' \
+--form 'file=@"/C:/Users/AnNN4/Desktop/Data_csv.csv"'
+```
+- Download file .csv data model
+```bash
+GET curl --location 'http://127.0.0.1:5000/train/download'
+```
+

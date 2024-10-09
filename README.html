@@ -235,6 +235,17 @@ Request body
     ]
 }
 </span></code></pre>
+<ul>
+<li>Upload file .csv append data model</li>
+</ul>
+<pre><code class="language-bash">POST curl --location <span class="hljs-string">&#x27;http://127.0.0.1:5000/train/upload&#x27;</span> \
+--form <span class="hljs-string">&#x27;file=@&quot;/C:/Users/AnNN4/Desktop/Data_csv.csv&quot;&#x27;</span>
+</code></pre>
+<ul>
+<li>Download file .csv data model</li>
+</ul>
+<pre><code class="language-bash">GET curl --location <span class="hljs-string">&#x27;http://127.0.0.1:5000/train/download&#x27;</span>
+</code></pre>
 
             
             
