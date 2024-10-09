@@ -77,3 +77,19 @@ Request body
     "source": ["Báo"]
 }
 ```
+- Retraining
+```bash
+PUT curl --location 'http://127.0.0.1:5000/retraining
+Request body
+{
+    "text": [
+        "Kiếm tiền rất tốn thời gian"
+    ],
+    "label": [
+        "MMO"
+    ],
+    "source": [
+        "Website"
+    ]
+}
+```

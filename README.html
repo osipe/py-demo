@@ -218,6 +218,23 @@ Request body
     &quot;source&quot;: [&quot;Báo&quot;]
 }
 </span></code></pre>
+<ul>
+<li>Retraining</li>
+</ul>
+<pre><code class="language-bash">PUT curl --location <span class="hljs-string">&#x27;http://127.0.0.1:5000/retraining
+Request body
+{
+    &quot;text&quot;: [
+        &quot;Kiếm tiền rất tốn thời gian&quot;
+    ],
+    &quot;label&quot;: [
+        &quot;MMO&quot;
+    ],
+    &quot;source&quot;: [
+        &quot;Website&quot;
+    ]
+}
+</span></code></pre>
 
             
             

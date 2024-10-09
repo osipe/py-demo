@@ -1,6 +1,8 @@
 import joblib
 import os
 from config import Config
+import json
+import pandas as pd
 
 class ModelStorage:
     def __init__(self):
@@ -22,3 +24,10 @@ class ModelStorage:
         else:
             print(f'Model not found at {model_path}')
             return None
+    def save_data_frame_pickle(self, data, data_name):
+        data_path = os.path.join(self.directory, f'{data_name}.pkl')
+        data.to_pickle(data_path)
+        print(f"Dữ liệu đã được ghi vào tệp {data_path}.")
+    def load_data_frame_pickle(self, data_name):
+        data_path = os.path.join(self.directory, f'{data_name}.pkl')
+        return pd.read_pickle(data_path) 
