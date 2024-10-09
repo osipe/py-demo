@@ -90,7 +90,7 @@ def upload_file():
             print("\nBáo cáo phân loại:\n", classification_report(y_test, y_pred_log, zero_division=1))
             return jsonify(
                 {
-                    "message": "Mô hình đã được huấn luyện thành công!",
+                    "message": "Mô hình đã được bổ sung dữ liệu!",
                     "logistic_model": {
                         "accuracy_score": log_accuracy_score
                     },
@@ -206,7 +206,7 @@ def retraining():
     print("\nBáo cáo phân loại:\n", classification_report(y_test, y_pred_log, zero_division=1))
     return jsonify(
         {
-            "message": "Mô hình đã được huấn luyện thành công!",
+            "message": "Mô hình đã được bổ sung dữ liệu!",
             "logistic_model": {
                 "accuracy_score": log_accuracy_score
             },
