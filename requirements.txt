@@ -10,3 +10,5 @@ scikit-learn
 pymongo
 #Lưu trữ và tải lại model ML
 joblib
+#Rest muitipart file
+requests

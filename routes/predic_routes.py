@@ -26,10 +26,10 @@ def predic():
         {
             "message": "Dự đoán thành công!",
             "logistic_model": {
-                "label": y_predict_log[0]
+                "label": y_predict_log.tolist()
             },
             "decision_tree_model": {
-                "label": y_predict[0]
+                "label": y_predict.tolist()
             }
         }
         ), 200
