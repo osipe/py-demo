@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>My REST API</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="my-rest-api">My REST API</h1>
+<h2 id="mô-tả">Mô Tả</h2>
+<p>Đây là một ứng dụng REST API đơn giản được xây dựng bằng Python và Flask. Ứng dụng phân loại văn bản đơn giản</p>
+<h2 id="yêu-cầu">Yêu Cầu</h2>
+<ul>
+<li>Các module cần thiết nằm ở requirements.txt</li>
+</ul>
+<pre><code class="language-bash">pip install -r requirements.txt
+</code></pre>
+<ul>
+<li>Các cấu hình ở .env</li>
+</ul>
+<h2 id="chạy-ứng-dụng">Chạy ứng dụng</h2>
+<pre><code class="language-bash">python app.py
+</code></pre>
+<h2 id="ví-dụ-rest-api-demo-py-mlpostman_collectionjson">Ví dụ REST API demo-py-ml.postman_collection.json</h2>
+<ul>
+<li>Train model</li>
+</ul>
+<pre><code class="language-bash">POST curl --location <span class="hljs-string">&#x27;http://127.0.0.1:5000/train
+Request body
+{
+    &quot;text&quot;: [
+        &quot;Bóng đá là môn thể thao phổ biến.&quot;,
+        &quot;Cúp World Cup diễn ra bốn năm một lần.&quot;,
+        &quot;Phim mới ra mắt rất thú vị.&quot;,
+        &quot;Sân khấu kịch sẽ có nhiều vở mới.&quot;,
+        &quot;Đua xe là môn thể thao mạo hiểm.&quot;,
+        &quot;Nhạc rock luôn có một lượng fan đông đảo.&quot;,
+        &quot;Bóng rổ là một môn thể thao hấp dẫn.&quot;,
+        &quot;Phim hoạt hình rất được yêu thích.&quot;,
+        &quot;Cầu lông là môn thể thao thú vị.&quot;,
+        &quot;Chương trình truyền hình này rất vui.&quot;,
+        &quot;Đá bóng là một sở thích phổ biến.&quot;,
+        &quot;Hài kịch mang lại nhiều tiếng cười.&quot;,
+        &quot;Xem bóng đá là phổ biến.&quot;,
+        &quot;Bóng đá là sở thích.&quot;,
+        &quot;Đá cầu là môn thể thao truyền thống.&quot;,
+        &quot;Giải đua xe công thức 1 rất kịch tính.&quot;,
+        &quot;Bộ phim này có nhiều cảnh hành động.&quot;,
+        &quot;Nhạc pop đang trở thành xu hướng hiện nay.&quot;,
+        &quot;Vở kịch này đã nhận được nhiều giải thưởng.&quot;,
+        &quot;Chương trình ca nhạc có nhiều tiết mục đặc sắc.&quot;,
+        &quot;Xem bóng chuyền rất thú vị.&quot;,
+        &quot;Cuộc thi thể thao học sinh năm nay rất thành công.&quot;,
+        &quot;Phim hài hước luôn thu hút đông đảo khán giả.&quot;,
+        &quot;Môn thể thao điện tử ngày càng phổ biến.&quot;,
+        &quot;Sân vận động luôn chật kín khán giả vào ngày cuối tuần.&quot;,
+        &quot;Các giải đấu thể thao quốc tế luôn thu hút sự quan tâm.&quot;
+    ],
+    &quot;label&quot;: [
+        &quot;Thể thao&quot;, &quot;Thể thao&quot;, &quot;Giải trí&quot;, &quot;Giải trí&quot;,
+        &quot;Thể thao&quot;, &quot;Giải trí&quot;, &quot;Thể thao&quot;, &quot;Giải trí&quot;,
+        &quot;Thể thao&quot;, &quot;Giải trí&quot;, &quot;Thể thao&quot;, &quot;Giải trí&quot;,
+        &quot;Thể thao&quot;, &quot;Thể thao&quot;, &quot;Thể thao&quot;, &quot;Thể thao&quot;,
+        &quot;Giải trí&quot;, &quot;Giải trí&quot;, &quot;Giải trí&quot;, &quot;Giải trí&quot;,
+        &quot;Thể thao&quot;, &quot;Thể thao&quot;, &quot;Giải trí&quot;, &quot;Thể thao&quot;,
+        &quot;Thể thao&quot;, &quot;Thể thao&quot;
+    ],
+    &quot;source&quot;: [
+        &quot;Website&quot;, &quot;Website&quot;, &quot;Báo&quot;, &quot;Báo&quot;,
+        &quot;Tạp chí&quot;, &quot;Website&quot;, &quot;Tạp chí&quot;, &quot;Website&quot;,
+        &quot;Website&quot;, &quot;Báo&quot;, &quot;Tạp chí&quot;, &quot;Báo&quot;,
+        &quot;Website&quot;, &quot;Tạp chí&quot;, &quot;Website&quot;, &quot;Website&quot;,
+        &quot;Báo&quot;, &quot;Báo&quot;, &quot;Tạp chí&quot;, &quot;Báo&quot;,
+        &quot;Website&quot;, &quot;Website&quot;, &quot;Báo&quot;, &quot;Tạp chí&quot;,
+        &quot;Tạp chí&quot;, &quot;Website&quot;
+    ]
+}
+</span></code></pre>
+<ul>
+<li>Predic label</li>
+</ul>
+<pre><code class="language-bash">POST curl --location <span class="hljs-string">&#x27;http://127.0.0.1:5000/predic
+Request body
+{
+    &quot;text&quot;: [&quot;Phim hài hước luôn thu hút đông đảo khán giả.&quot;],
+    &quot;source&quot;: [&quot;Báo&quot;]
+}
+</span></code></pre>
+
+            
+            
+        </body>
+        </html>

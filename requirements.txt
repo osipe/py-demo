@@ -1,0 +1,12 @@
+#REST app
+Flask
+#Config .env
+python-dotenv
+#DataFrame, Xử lý Dữ liệu CSV, Excel, SQL, JSON
+pandas
+#Machine learning
+scikit-learn
+#Kết Nối với MongoDB
+pymongo
+#Lưu trữ và tải lại model ML
+joblib

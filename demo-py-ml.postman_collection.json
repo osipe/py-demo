@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "a04782a9-5b03-4ae1-8fcf-b57cfc7fc34e",
+		"name": "demo-py-ml",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5523075",
+		"_collection_link": "https://blue-flare-511957.postman.co/workspace/My-Workspace~bdc999f6-af41-46cd-8663-5248de0ae492/collection/5523075-a04782a9-5b03-4ae1-8fcf-b57cfc7fc34e?action=share&source=collection_link&creator=5523075"
+	},
+	"item": [
+		{
+			"name": "train",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": [\r\n        \"Bóng đá là môn thể thao phổ biến.\",\r\n        \"Cúp World Cup diễn ra bốn năm một lần.\",\r\n        \"Phim mới ra mắt rất thú vị.\",\r\n        \"Sân khấu kịch sẽ có nhiều vở mới.\",\r\n        \"Đua xe là môn thể thao mạo hiểm.\",\r\n        \"Nhạc rock luôn có một lượng fan đông đảo.\",\r\n        \"Bóng rổ là một môn thể thao hấp dẫn.\",\r\n        \"Phim hoạt hình rất được yêu thích.\",\r\n        \"Cầu lông là môn thể thao thú vị.\",\r\n        \"Chương trình truyền hình này rất vui.\",\r\n        \"Đá bóng là một sở thích phổ biến.\",\r\n        \"Hài kịch mang lại nhiều tiếng cười.\",\r\n        \"Xem bóng đá là phổ biến.\",\r\n        \"Bóng đá là sở thích.\",\r\n        \"Đá cầu là môn thể thao truyền thống.\",\r\n        \"Giải đua xe công thức 1 rất kịch tính.\",\r\n        \"Bộ phim này có nhiều cảnh hành động.\",\r\n        \"Nhạc pop đang trở thành xu hướng hiện nay.\",\r\n        \"Vở kịch này đã nhận được nhiều giải thưởng.\",\r\n        \"Chương trình ca nhạc có nhiều tiết mục đặc sắc.\",\r\n        \"Xem bóng chuyền rất thú vị.\",\r\n        \"Cuộc thi thể thao học sinh năm nay rất thành công.\",\r\n        \"Phim hài hước luôn thu hút đông đảo khán giả.\",\r\n        \"Môn thể thao điện tử ngày càng phổ biến.\",\r\n        \"Sân vận động luôn chật kín khán giả vào ngày cuối tuần.\",\r\n        \"Các giải đấu thể thao quốc tế luôn thu hút sự quan tâm.\"\r\n    ],\r\n    \"label\": [\r\n        \"Thể thao\", \"Thể thao\", \"Giải trí\", \"Giải trí\",\r\n        \"Thể thao\", \"Giải trí\", \"Thể thao\", \"Giải trí\",\r\n        \"Thể thao\", \"Giải trí\", \"Thể thao\", \"Giải trí\",\r\n        \"Thể thao\", \"Thể thao\", \"Thể thao\", \"Thể thao\",\r\n        \"Giải trí\", \"Giải trí\", \"Giải trí\", \"Giải trí\",\r\n        \"Thể thao\", \"Thể thao\", \"Giải trí\", \"Thể thao\",\r\n        \"Thể thao\", \"Thể thao\"\r\n    ],\r\n    \"source\": [\r\n        \"Website\", \"Website\", \"Báo\", \"Báo\",\r\n        \"Tạp chí\", \"Website\", \"Tạp chí\", \"Website\",\r\n        \"Website\", \"Báo\", \"Tạp chí\", \"Báo\",\r\n        \"Website\", \"Tạp chí\", \"Website\", \"Website\",\r\n        \"Báo\", \"Báo\", \"Tạp chí\", \"Báo\",\r\n        \"Website\", \"Website\", \"Báo\", \"Tạp chí\",\r\n        \"Tạp chí\", \"Website\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/train",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"train"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "predic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": [\"Phim hài hước luôn thu hút đông đảo khán giả.\"],\r\n    \"source\": [\"Báo\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/predic",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"predic"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
