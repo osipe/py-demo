@@ -1,10 +1,11 @@
-# My REST API
+# Example REST API Python
 
 ## Mô Tả
 
 Đây là một ứng dụng REST API đơn giản được xây dựng bằng Python và Flask. Ứng dụng phân loại văn bản đơn giản
 
 ## Yêu Cầu
+- Cài đặt py, pip, mongodb
 - Các module cần thiết nằm ở requirements.txt
 ```bash
 pip install -r requirements.txt
@@ -13,6 +14,12 @@ pip install -r requirements.txt
 ## Chạy ứng dụng 
 ```bash
 python app.py
+```
+### Dữ liệu mẫu
+- 1. Lưu trữ theo thư mục nằm ở thư mục model
+- 2. Lưu trữ theo mongodb được backup ở thư mục db/model
+```bash
+mongorestore --db model <dir-your-pc>\db\model
 ```
 ## Ví dụ REST API demo-py-ml.postman_collection.json
 - Train model
@@ -103,3 +110,4 @@ POST curl --location 'http://127.0.0.1:5000/train/upload' \
 GET curl --location 'http://127.0.0.1:5000/train/download'
 ```
 
+- Ghi chú: Tương tự cho các dịch vụ theo MongoDB 

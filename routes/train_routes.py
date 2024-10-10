@@ -6,6 +6,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score
 from sklearn.linear_model import LogisticRegression
 from store.model_storage import ModelStorage
+from store.mongo_model_storage import MongoModelStorage
+from config import Config
 import os
 
 train_routes = Blueprint('train_routes', __name__)
@@ -16,7 +18,7 @@ def download_file():
         storage = ModelStorage()
         df = storage.load_data_frame_pickle('data')
         # Đường dẫn nơi bạn muốn lưu tệp CSV
-        csv_file_path = 'df_old.csv'
+        csv_file_path = os.path.join(Config.MODEL_STORAGE_DIR, 'df_old.csv')
         # Lưu DataFrame thành tệp CSV
         df.to_csv(csv_file_path, index=False, encoding='utf-8')
         # Kiểm tra xem tệp có tồn tại không
@@ -45,6 +47,7 @@ def upload_file():
         if 'text' in df_new.columns and 'source' in df_new.columns and 'label' in df_new.columns:
             # Tạo một đối tượng ModelStorage
             storage = ModelStorage()
+            mongo_storage = MongoModelStorage()
             # Tải mô hình
             decision_tree_model = storage.load_model('my_model_decision_tree')
             log_model = storage.load_model('my_model_logistic')
@@ -61,10 +64,12 @@ def upload_file():
             #Kết hợp dữ liệu old + new, lưu trữ dataFrame đã kết hợp
             combined_data = pd.concat([df_old, df_new], ignore_index=True)
             storage.save_data_frame_pickle(combined_data, "data")
+            mongo_storage.save_file(combined_data, "data")
             # Biến đổi dữ liệu đã kết hợp
             X_new = vectorizer.transform(combined_data['combined'])
             # Lưu vectorizer
             storage.save_model(vectorizer, 'my_model_vectorizer')
+            mongo_storage.save_file(vectorizer, "my_model_vectorizer")
             # Chia dữ liệu
             X_train, X_test, y_train, y_test = train_test_split(X_new, combined_data['label'], test_size=0.2, random_state=0)
             #Mô hình DecisionTreeClassifier
@@ -72,6 +77,7 @@ def upload_file():
             decision_tree_model.fit(X_train, y_train)
             #Lưu trữ
             storage.save_model(decision_tree_model, 'my_model_decision_tree')
+            mongo_storage.save_file(decision_tree_model, "my_model_decision_tree")
             #Đánh giá
             print("============Đánh giá mô hình DecisionTreeClassifier==================")
             y_pred = decision_tree_model.predict(X_test)
@@ -82,6 +88,7 @@ def upload_file():
             log_model.fit(X_train, y_train)
             #Lưu trữ
             storage.save_model(log_model, 'my_model_logistic')
+            mongo_storage.save_file(log_model, "my_model_logistic")
             #Đánh giá
             print("============Đánh giá mô hình LogisticRegression==================")
             y_pred_log = log_model.predict(X_test)

@@ -4,7 +4,7 @@ services:
     ports:
       - "5000:5000"  # Ánh xạ cổng 5000 từ container ra máy chủ
     volumes:
-      - ./volumes:/app/models  # Ánh xạ thư mục model từ máy chủ đến container
+      - ./models:/app/models  # Ánh xạ thư mục model từ máy chủ đến container
     env_file:
       - .env  # Tải các biến môi trường từ tệp .env
     network_mode: bridge   # Sử dụng chế độ mạng host

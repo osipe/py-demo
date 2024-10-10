@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>My REST API</title>
+            <title>Example REST API Python</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -138,11 +138,12 @@
         
         </head>
         <body class="vscode-body vscode-light">
-            <h1 id="my-rest-api">My REST API</h1>
+            <h1 id="example-rest-api-python">Example REST API Python</h1>
 <h2 id="mô-tả">Mô Tả</h2>
 <p>Đây là một ứng dụng REST API đơn giản được xây dựng bằng Python và Flask. Ứng dụng phân loại văn bản đơn giản</p>
 <h2 id="yêu-cầu">Yêu Cầu</h2>
 <ul>
+<li>Cài đặt py, pip, mongodb</li>
 <li>Các module cần thiết nằm ở requirements.txt</li>
 </ul>
 <pre><code class="language-bash">pip install -r requirements.txt
@@ -152,6 +153,21 @@
 </ul>
 <h2 id="chạy-ứng-dụng">Chạy ứng dụng</h2>
 <pre><code class="language-bash">python app.py
+</code></pre>
+<h3 id="dữ-liệu-mẫu">Dữ liệu mẫu</h3>
+<ul>
+<li>
+<ol>
+<li>Lưu trữ theo thư mục nằm ở thư mục model</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Lưu trữ theo mongodb được backup ở thư mục db/model</li>
+</ol>
+</li>
+</ul>
+<pre><code class="language-bash">mongorestore --db model &lt;dir-your-pc&gt;\db\model
 </code></pre>
 <h2 id="ví-dụ-rest-api-demo-py-mlpostman_collectionjson">Ví dụ REST API demo-py-ml.postman_collection.json</h2>
 <ul>
@@ -246,6 +262,9 @@ Request body
 </ul>
 <pre><code class="language-bash">GET curl --location <span class="hljs-string">&#x27;http://127.0.0.1:5000/train/download&#x27;</span>
 </code></pre>
+<ul>
+<li>Ghi chú: Tương tự cho các dịch vụ theo MongoDB</li>
+</ul>
 
             
             
